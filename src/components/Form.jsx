@@ -5,7 +5,7 @@ import Button from "./Button";
 import { contactSchema } from "./schemas/Contact";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-function Form() {
+function Form({ onSubmit }) {
   // Añadir react-hook-form aquí si es necesario
   const methods = useForm({
     resolver: zodResolver(contactSchema), // Usamos zod para validar el formulario
@@ -14,7 +14,7 @@ function Form() {
     // Con FormProvider podemos envolver el formulario y usar los métodos de react-hook-form
     // {...methods} esparce los métodos de react-hook-form para que estén disponibles en los componentes hijos (Input)
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit((data) => console.log(data))}>
+      <form onSubmit={methods.handleSubmit(onSubmit)}>
         <Input name="name">Nombre</Input>
         <Input name="lastname">Apellido</Input>
         <Input name="email">Email</Input>
