@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import Input from "./Input";
 import { FormProvider } from "react-hook-form";
+import Button from "./Button";
 
 function Form() {
   // Añadir react-hook-form aquí si es necesario
@@ -11,10 +12,9 @@ function Form() {
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit((data) => console.log(data))}>
         <Input name="name">Nombre</Input>
+        <Input name="lastname">Apellido</Input>
         <Input name="email">Email</Input>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        <Button>Enviar</Button>
       </form>
     </FormProvider>
   );
