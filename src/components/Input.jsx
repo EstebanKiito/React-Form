@@ -1,14 +1,17 @@
-function Input({ children }) {
+import { useFormContext } from "react-hook-form";
+
+function Input({ children, name }) {
+  const { register } = useFormContext(); // Conectamos con el Provider
   return (
-    <div class="mb-3">
-      <label htmlFor="exampleInputEmail1" class="form-label">
+    <div className="mb-3">
+      <label htmlFor={name} className="form-label">
         {children}
       </label>
       <input
-        type="name"
+        {...register(name)} // Al apretar submit, este valor se guardara con register
+        type="text"
         className="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
+        id={name}
       />
     </div>
   );
