@@ -1,4 +1,4 @@
-function List({ contacts }) {
+function List({ contacts, onClick }) {
   return (
     <table className="table">
       <thead>
@@ -11,7 +11,7 @@ function List({ contacts }) {
       </thead>
       <tbody>
         {contacts.map((c) => (
-          <tr key={c.id}>
+          <tr key={c.id} onClick={() => onClick(c.id)}>
             <td>{c.name}</td>
             <td>{c.lastname}</td>
             <td>{c.email}</td>

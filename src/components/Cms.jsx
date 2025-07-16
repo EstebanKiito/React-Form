@@ -28,7 +28,7 @@ function Cms() {
       </div>
       <div className="row">
         <div className="col">
-          <List contacts={contacts} />
+          <List contacts={contacts} onClick={deleteContact} />
         </div>
       </div>
     </div>
