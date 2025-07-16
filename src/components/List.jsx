@@ -11,7 +11,11 @@ function List({ contacts, onClick }) {
       </thead>
       <tbody>
         {contacts.map((c) => (
-          <tr key={c.id} onClick={() => onClick(c.id)}>
+          <tr
+            style={{ cursor: "pointer" }}
+            key={c.id}
+            onClick={() => onClick(c.id)}
+          >
             <td>{c.name}</td>
             <td>{c.lastname}</td>
             <td>{c.email}</td>
