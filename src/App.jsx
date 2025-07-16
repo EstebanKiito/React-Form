@@ -1,13 +1,10 @@
 import { useState } from 'react'
 import './App.css'
+import Cms from './components/Cms.jsx' // Importamos el componente Cms
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-    </>
-  )
+  return <Cms />
 }
 
 export default App
