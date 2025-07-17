@@ -6,7 +6,7 @@ function List({ contacts, onClick }) {
           <th scope="col">Nombre</th>
           <th scope="col">Apellido</th>
           <th scope="col">Email</th>
-          <th scope="col">ID</th>
+          <th scope="col">Tipo</th>
         </tr>
       </thead>
       <tbody>
@@ -19,7 +19,7 @@ function List({ contacts, onClick }) {
             <td>{c.name}</td>
             <td>{c.lastname}</td>
             <td>{c.email}</td>
-            <td>{c.id}</td>
+            <td>{c.type}</td>
           </tr>
         ))}
       </tbody>

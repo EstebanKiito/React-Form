@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+export const category = ["Amigo", "Familia", "Trabajo", "Otro"];
+
 export const contactSchema = z.object({
   name: z
     .string()
@@ -11,6 +13,7 @@ export const contactSchema = z.object({
     .min(3, "El apellido debe tener al menos 2 caracteres"),
   email: z.string().min(1, { message: "El email es obligatorio" }),
   //.email({ message: "El email no es válido" }), // DESUSO?
+  type: z.enum(category, { message: "El tipo es obligatorio" }),
 });
 
 //export type Contact = z.infer<typeof contactSchema>;

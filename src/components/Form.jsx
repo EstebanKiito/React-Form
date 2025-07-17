@@ -2,8 +2,9 @@ import { useForm } from "react-hook-form";
 import Input from "./Input";
 import { FormProvider } from "react-hook-form";
 import Button from "./Button";
-import { contactSchema } from "./schemas/Contact";
+import { contactSchema, category } from "./schemas/Contact";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Select from "./Select";
 
 function Form({ onSubmit }) {
   // Añadir react-hook-form aquí si es necesario
@@ -18,6 +19,12 @@ function Form({ onSubmit }) {
         <Input name="name">Nombre</Input>
         <Input name="lastname">Apellido</Input>
         <Input name="email">Email</Input>
+        <Select
+          name="type"
+          label="Tipo"
+          options={category}
+          defaultMessage="---Seleccione una categoría---"
+        />
         <Button>Enviar</Button>
       </form>
     </FormProvider>
