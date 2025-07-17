@@ -25,7 +25,10 @@ function Form({ onSubmit }) {
           options={category}
           defaultMessage="---Seleccione una categoría---"
         />
-        <Button>Enviar</Button>
+        <Button type="submit">Enviar</Button>
+        <Button variant="secondary" onClick={() => methods.reset()}>
+          Limpiar
+        </Button>
       </form>
     </FormProvider>
   );
