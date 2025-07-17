@@ -2,7 +2,7 @@ import { useFormContext } from "react-hook-form";
 
 function Select({ label, defaultMessage, options, name }) {
   const { register, formState, getFieldState } = useFormContext();
-  const { error } = getFieldState(label, formState);
+  const { error } = getFieldState(name, formState);
   return (
     <div className="mb-3">
       <label className="form-label">{label}</label>
